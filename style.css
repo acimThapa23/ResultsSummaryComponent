@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;900&family=Outfit:wght@400;700&display=swap");
 
+/* lot of errors in css I am sorry if this looks bad! I will try better next time :) */
 :root {
   --mobile-width: 375px;
   --desktop-width: 1440px;
@@ -29,6 +30,9 @@
   --font-family: "Hanken Grotesk", sans-serif;
   font-family: "Outfit", sans-serif;
 }
+
+/* Andy Bell's modern-css reset */
+/* https://piccalil.li/blog/a-more-modern-css-reset/ */
 
 /* Box sizing rules */
 *,
@@ -120,11 +124,17 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
+/* End of Andy Bell's Reset */
+
+/* custom styling */
+
+/* styling main section and containerss */
 .section {
   background-color: var(--color-neutral-white);
   width: 100vw;
 }
 
+/* this section centers the div in the middle of screen  */
 .section-center {
   width: 700px;
 
@@ -134,6 +144,7 @@ textarea:not([rows]) {
   height: 540px;
 }
 
+/* The card component which includes remarks and your result with some linear gradient background */
 .card {
   background: linear-gradient(
     var(--gradient--light-background),
@@ -145,13 +156,17 @@ textarea:not([rows]) {
   width: 350px;
 }
 
+/* header title for card "Your Result" */
+
 .card header h1 {
   color: var(--color-neutral-lavendar-300);
   margin-block: 2em;
   font-weight: var(--fw-700);
   font-size: 1.7em;
 }
+/* end of card header section  */
 
+/* USing radian gradient to form a circle for score obtained */
 .score-section {
   background-image: radial-gradient(
     var(--gradient-cirlce-violet-blue),
@@ -165,19 +180,23 @@ textarea:not([rows]) {
   display: grid;
   place-items: center;
 }
-
+/* bigger font size for obtained marks  */
 .score-section h1 {
   font-size: 4em;
   margin: 0;
   color: var(--color-neutral-white);
 }
 
+/* styling small tag which shows "out of 100" */
 small {
   color: var(--color-neutral-lavendar-300);
   margin-top: -40px;
   font-size: 1.2em;
 }
 
+/* end of radial gradient section */
+
+/*paragraph element styling which shows remarks */
 .remarks {
   width: 230px;
   margin: 2.5em auto;
@@ -193,7 +212,11 @@ small {
   color: var(--color-neutral-lavendar-300);
   font-weight: var(--fw-500);
 }
+/* end of section */
 
+/* styling section which is side by side to element above. This was  set using flex property */
+
+/* main container for second section */
 .summary-section {
   background-color: var(--color-neutral-blue);
   box-shadow: 0px 2px 5px var(--color-neutral-lavendar-300);
@@ -202,17 +225,24 @@ small {
   height: 520px;
 }
 
+/* title header for section 2  */
 .summary-section h1 {
   font-size: 2em;
   margin-left: 0.4em;
   color: var(--color-neutral-dark-gray-blue);
 }
 
+/* div which includes two component a div > div  */
+
 .section-summary-reaction {
   margin-top: 1.7em;
   padding: 0.54em;
 }
 
+/* end of parent div  */
+
+/* single tab for four elemtsn inside of it inclduing divs dispaly set to flex and justify content space between. */
+/* so they can be far away from each other leaving margin in middle */
 .single-tab {
   display: flex;
   justify-content: space-between;
@@ -220,14 +250,28 @@ small {
   padding-inline: 0.56em;
 }
 
+/* flex container for category and icons */
 .flex {
   display: flex;
   gap: 5px;
 }
 
 .flex span {
-  color: var(--color-primary-red);
+  color: blue;
   font-weight: var(--fw-700);
+}
+
+/* end of flex container */
+
+/* styling scores with three spans  */
+.scored {
+  color: var(--color-neutral-dark-gray-blue);
+  margin-inline-end: 5px;
+}
+
+.total {
+  color: var(--color-neutral-lavendar-300);
+  margin-inline-start: 5px;
 }
 
 .score {
@@ -236,19 +280,33 @@ small {
   gap: 10px;
 }
 
-.score span {
-  color: var(--color-neutral-dark-gray-blue);
+/* selecting colors for every action or as specified in json data "Category" */
+/* I was not sure how to add colors to each element since i was dynamically populating the markup, 
+therefor i used index in for each to make sure each child element had differnt class name 
+ */
+.action.hi0 {
+  color: var(--color-primary-red);
 }
 
-.score span:nth-child(3) {
-  color: var(--color-neutral-lavendar-300);
+.action.hi1 {
+  color: var(--color-primary-oranage-yellow);
+}
+.action.hi2 {
+  color: var(--color-primary-green-teal);
+}
+.action.hi3 {
+  color: var(--color-primaryy-cobalt-blue);
 }
 
+/* end of selecting colors */
+
+/* container for  Continue button */
 .button-container {
   margin-top: 2em;
   width: 100%;
 }
 
+/* button styling */
 .btn {
   background-color: var(--color-neutral-dark-gray-blue);
   border: none;
@@ -260,7 +318,9 @@ small {
   border-radius: 100vw;
   color: var(--color-neutral-white);
 }
+/* end of button styling */
 
+/* button active state and hover state */
 .btn:active,
 .btn:hover {
   background: linear-gradient(
@@ -270,6 +330,11 @@ small {
   );
   cursor: pointer;
 }
+
+/* end of button state control */
+
+/* media querries Im not sure how they asked us to do but I set display to grid of main container 
+which made sure element stays on top one after other, in column direction */
 @media only screen and (max-width: 375px) {
   .section {
     width: 100%;
@@ -286,14 +351,5 @@ small {
   .card {
     width: 350px;
     max-width: 325px;
-  }
-
-  .btn:hover {
-    background: linear-gradient(
-      var(--gradient-royal-blue),
-      var(--gradient--light-background),
-      var(--gradient-royal-blue)
-    );
-    cursor: pointer;
   }
 }

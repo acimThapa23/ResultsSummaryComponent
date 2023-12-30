@@ -7,7 +7,7 @@ const fetchData = async () => {
     const info = await response.json();
     const btn = reCreateElement("btn", "button", "btn", "Continue");
 
-    info.forEach((i) => {
+    info.forEach((i, index) => {
       const { category, score, icon } = i;
       const section = reCreateElement("div", "div", "section-summary-reaction");
 
@@ -17,7 +17,12 @@ const fetchData = async () => {
 
       const img = reCreateElement("img", "img", "", "", icon);
 
-      const span = reCreateElement("span", "span", "action", category);
+      const span = reCreateElement(
+        "span",
+        "span",
+        `action ${"hi" + index.toString()} `,
+        category
+      );
 
       const scoreDiv = reCreateElement("div", "div", score);
 
@@ -33,7 +38,7 @@ const fetchData = async () => {
       appendElement(flexContainer, span);
       scoreDiv.append(scored, slash, total);
       appendElement(divSingle, scoreDiv);
-
+      console.log(span);
       summarySection.append(section);
     });
 
@@ -63,3 +68,7 @@ function reCreateElement(variableName, name, className, text, src) {
 function appendElement(parentElement, childElement) {
   parentElement.append(childElement);
 }
+
+const addColor = (element, colorName) => {
+  element.style.color = colorName;
+};
