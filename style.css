@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;900&family=Outfit:wght@400;700&display=swap");
+
+:root {
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+
+  --color-primary-red: hsl(0, 100%, 67%);
+  --color-primary-oranage-yellow: hsl(39, 100%, 56%);
+  --color-primary-green-teal: hsl(166, 100%, 37%);
+  --color-primaryy-cobalt-blue: hsl(234, 85%, 45%);
+
+  --gradient--light-background: hsla(252, 100%, 67%);
+  --gradient-royal-blue: hsla(241, 81%, 54%);
+
+  --gradient-cirlce-violet-blue: hsla(256, 72%, 46%, 0.7);
+  --gradient-circle-persian-blue: hsla(241, 72%, 46%, 0);
+
+  --color-neutral-white: hsl(0, 0%, 100%);
+  --color-neutral-blue: (221, 105, 96%);
+  --color-neutral-lavendar-300: hsl(241, 100%, 89%);
+  --color-neutral-dark-gray-blue: hsl(224, 30%, 27%);
+
+  --font-size: 18px;
+
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-900: 900;
+
+  --font-family: "Hanken Grotesk", sans-serif;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.section {
+  background-color: var(--color-neutral-white);
+  width: 100vw;
+}
+
+.section-center {
+  width: 700px;
+
+  margin: 4rem auto;
+  display: flex;
+  gap: 2em;
+  height: 540px;
+}
+
+.card {
+  background: linear-gradient(
+    var(--gradient--light-background),
+    var(--gradient-royal-blue)
+  );
+  border-radius: 20px;
+  height: 520px;
+  text-align: center;
+  width: 350px;
+}
+
+.card header h1 {
+  color: var(--color-neutral-lavendar-300);
+  margin-block: 2em;
+  font-weight: var(--fw-700);
+  font-size: 1.7em;
+}
+
+.score-section {
+  background-image: radial-gradient(
+    var(--gradient-cirlce-violet-blue),
+    var(--gradient-circle-persian-blue)
+  );
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+
+.score-section h1 {
+  font-size: 4em;
+  margin: 0;
+  color: var(--color-neutral-white);
+}
+
+small {
+  color: var(--color-neutral-lavendar-300);
+  margin-top: -40px;
+  font-size: 1.2em;
+}
+
+.remarks {
+  width: 230px;
+  margin: 2.5em auto;
+}
+
+.remarks h1 {
+  color: var(--color-neutral-white);
+  font-size: calc(var(--font-size) * 1.8);
+  font-weight: var(--fw-700);
+}
+
+.remarks p {
+  color: var(--color-neutral-lavendar-300);
+  font-weight: var(--fw-500);
+}
+
+.summary-section {
+  background-color: var(--color-neutral-blue);
+  box-shadow: 0px 2px 5px var(--color-neutral-lavendar-300);
+  width: 20em;
+  border-radius: 10px;
+  height: 520px;
+}
+
+.summary-section h1 {
+  font-size: 2em;
+  margin-left: 0.4em;
+  color: var(--color-neutral-dark-gray-blue);
+}
+
+.section-summary-reaction {
+  margin-top: 1.7em;
+  padding: 0.54em;
+}
+
+.single-tab {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2em;
+  padding-inline: 0.56em;
+}
+
+.flex {
+  display: flex;
+  gap: 5px;
+}
+
+.flex span {
+  color: var(--color-primary-red);
+  font-weight: var(--fw-700);
+}
+
+.score {
+  font-weight: var(--fw-700);
+  display: flex;
+  gap: 10px;
+}
+
+.score span {
+  color: var(--color-neutral-dark-gray-blue);
+}
+
+.score span:nth-child(3) {
+  color: var(--color-neutral-lavendar-300);
+}
+
+.button-container {
+  margin-top: 2em;
+  width: 100%;
+}
+
+.btn {
+  background-color: var(--color-neutral-dark-gray-blue);
+  border: none;
+  width: 300px;
+  font-size: 1.3em;
+  height: 60px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 100vw;
+  color: var(--color-neutral-white);
+}
+
+.btn:active,
+.btn:hover {
+  background: linear-gradient(
+    var(--gradient-royal-blue),
+    var(--gradient--light-background),
+    var(--gradient-royal-blue)
+  );
+  cursor: pointer;
+}
+@media only screen and (max-width: 375px) {
+  .section {
+    width: 100%;
+    margin: 20px auto;
+  }
+  .section-center {
+    margin: 0 auto;
+    display: grid;
+    width: 100%;
+    min-height: 200px;
+    justify-content: center;
+  }
+
+  .card {
+    width: 350px;
+    max-width: 325px;
+  }
+
+  .btn:hover {
+    background: linear-gradient(
+      var(--gradient-royal-blue),
+      var(--gradient--light-background),
+      var(--gradient-royal-blue)
+    );
+    cursor: pointer;
+  }
+}
