@@ -104,6 +104,7 @@ img,
 picture {
   max-width: 100%;
   display: block;
+  height: 30px;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -141,7 +142,6 @@ textarea:not([rows]) {
   margin: 4rem auto;
   display: flex;
   gap: 2em;
-  height: 540px;
 }
 
 /* The card component which includes remarks and your result with some linear gradient background */
@@ -151,7 +151,7 @@ textarea:not([rows]) {
     var(--gradient-royal-blue)
   );
   border-radius: 20px;
-  height: 520px;
+
   text-align: center;
   width: 350px;
 }
@@ -222,7 +222,6 @@ small {
   box-shadow: 0px 2px 5px var(--color-neutral-lavendar-300);
   width: 20em;
   border-radius: 10px;
-  height: 520px;
 }
 
 /* title header for section 2  */
@@ -235,7 +234,7 @@ small {
 /* div which includes two component a div > div  */
 
 .section-summary-reaction {
-  margin-top: 1.7em;
+  margin-top: 1rem;
   padding: 0.54em;
 }
 
@@ -248,6 +247,38 @@ small {
   justify-content: space-between;
   font-size: 1.2em;
   padding-inline: 0.56em;
+}
+
+.single-tab.tab0 {
+  background-color: hsla(0, 100%, 67%, 0.08);
+  height: 60px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.single-tab.tab1 {
+  background-color: hsla(39, 100%, 56%, 0.1);
+  height: 60px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.single-tab.tab2 {
+  background-color: hsla(166, 100%, 37%, 0.06);
+  height: 60px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.single-tab.tab3 {
+  background-color: hsla(234, 85%, 45%, 0.07);
+  height: 60px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
 }
 
 /* flex container for category and icons */
@@ -302,7 +333,7 @@ therefor i used index in for each to make sure each child element had differnt c
 
 /* container for  Continue button */
 .button-container {
-  margin-top: 2em;
+  margin-top: 1.6em;
   width: 100%;
 }
 
@@ -313,7 +344,7 @@ therefor i used index in for each to make sure each child element had differnt c
   width: 300px;
   font-size: 1.3em;
   height: 60px;
-  margin: 0 auto;
+  margin: 30px auto;
   display: block;
   border-radius: 100vw;
   color: var(--color-neutral-white);
@@ -335,7 +366,7 @@ therefor i used index in for each to make sure each child element had differnt c
 
 /* media querries Im not sure how they asked us to do but I set display to grid of main container 
 which made sure element stays on top one after other, in column direction */
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 400px) {
   .section {
     width: 100%;
     margin: 20px auto;

@@ -11,7 +11,11 @@ const fetchData = async () => {
       const { category, score, icon } = i;
       const section = reCreateElement("div", "div", "section-summary-reaction");
 
-      const divSingle = reCreateElement("div", "div", "single-tab");
+      const divSingle = reCreateElement(
+        "div",
+        "div",
+        `single-tab ${"tab" + index.toString()}`
+      );
 
       const flexContainer = reCreateElement("div", "div", "flex");
 
@@ -38,8 +42,7 @@ const fetchData = async () => {
       appendElement(flexContainer, span);
       scoreDiv.append(scored, slash, total);
       appendElement(divSingle, scoreDiv);
-      console.log(span);
-      summarySection.append(section);
+      appendElement(summarySection, section);
     });
 
     appendElement(summarySection, btnContainer);
@@ -68,7 +71,3 @@ function reCreateElement(variableName, name, className, text, src) {
 function appendElement(parentElement, childElement) {
   parentElement.append(childElement);
 }
-
-const addColor = (element, colorName) => {
-  element.style.color = colorName;
-};
